@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+bai 1: tinh binh phuong <br>
+<script>
+  function binhphuong(a) {
+      let b = Math.pow(a,2)
+      return Math.pow(a,2)
+  }
+  let c = binhphuong(3)
+  document.write('binh phuong cua 3 la: ' + c)
+</script><br><hr>
+bai 2:Viết hàm trả về diện tích, hàm tính chu vi hình tròn của bán kính được đưa vào.<br>
+<script>
+    function dientich(a) {
+        let pi = Math.PI
+        let e = Math.pow(a , 2) * pi;
+        return  e ;
+    }
+    let a = dientich(5)
+    document.write('-dien tich hinh tron co ban kinh 5 la: ' + a)
+</script><br>
+<script>
+    function chuvi(b) {
+      let pi = Math.PI;
+      let c = b * pi;
+      return c;
+    }
+    let b = chuvi(5);
+    document.write('-chu vi hinh tron ban kinh 5 la: ' + b)
+</script><br><hr>
+bai 3: viết hàm trả về giai thừa của một số nguyên bất kỳ được đưa vào.<br>
+<script>
+    let dem = '';
+    function giaithua(e) {
+        let tich = 1;
+        for (let i = e; i > 0; i--) {
+            dem += '<br>' + tich
+            tich = tich * i;
+        }
+        return tich;
+    }
+    let e = giaithua(6)
+    document.write(-e)
+    document.write(dem)
+</script><br><hr>
+bai 4:  Viết hàm nhận vào 3 số nguyên bất kỳ, trả về tổng 3 so <br>
+<script>
+    function songuyen(x,y,z) {
+        return x+y+z;
+    }
+    let inra = songuyen(1,2,3);
+    document.write('tong 3 so nguyen la: ' + inra)
+</script><br><hr>
+bai 5:Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.<br>
+<input type="number" id="so dau" placeholder="nhap vao a">
+<button onclick="kiemtra()">click</button>
+<p id="kq"></p>
+<p id="kq2"></p>
+<script>
+    function kiemtra() {
+        let a = +document.getElementById('so dau').value;
+        if(a > 0){
+            document.getElementById('kq').innerHTML = 'true';
+        }else{
+            document.getElementById('kq2').innerHTML = 'flase';
+        }
+    }
+</script><br><hr>
+bai 6: Viết hàm nhận vào 1 mảng, trả về tổng các số > 10<br>
+<script>
+    function getMang(arr) {
+        let tong = 0;
+        for (let i = 0; i < arr.length; i++) {
+           if(arr[i] > 10){
+               tong += arr[i];
+           }
+        }
+        return tong
+    }
+    let mang = [12,11,13,14,15];
+    let ketqua = getMang(mang);
+    document.write('tong cac so lon hon 10 la: ' + ketqua);
+</script><br><hr>
+bai 7: Viết hàm nhận vào 1 mảng, trả về số lượng các số > 10<br>
+<script>
+    function inraa(all) {
+        let dem = 0;
+        for (let i = 0; i < all.length; i++) {
+            if(all[i] > 10){
+                dem ++;
+            }
+        }
+        return dem
+    }
+    let demso = [12,13,14];
+    let ketquaq = inraa(demso);
+    document.write('so luong mang lon hon 10 de tinh trung binh cong la: ' + ketquaq)
+</script><br><hr>
+bai 8: Viết hàm nhận vào 1 mảng, trả TBC các số > 10. (Phải dùng các hàm đã tạo ở bài 6 và 7)<br>
+<p>nhap o dau trang luc vao trang</p>
+<script>
+    function tbc(alls){
+        let tbcc = getMang(alls) / inraa(alls)
+        return tbcc
+    }
+    let abc = [];
+    let cba = +prompt('nhap so luong cua mang');
+    for (let i = 0; i < cba; i++) {
+        let ccc = +prompt('lan thu: ' + i)
+        abc.push(ccc)
+    }
+   alert(tbc(abc))
+</script>
+</body>
+</html>
